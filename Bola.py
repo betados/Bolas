@@ -1,7 +1,7 @@
 import pygame
 import random
 import math
-class Grano:
+class Bola:
     pantalla=0
     color=0
     radio=20

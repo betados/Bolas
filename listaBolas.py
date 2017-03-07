@@ -1,8 +1,8 @@
 
-class ListaGranos:
+class ListaBolas:
     lista = []
-    def add(self, grano):
-        self.lista.append(grano)
+    def add(self, bola):
+        self.lista.append(bola)
 
     def dibuja(self,color):
         for grano in self.lista:

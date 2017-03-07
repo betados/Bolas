@@ -1,10 +1,10 @@
 # comentario
 import pygame
-from Grano import Grano
-from arrayGranos import ListaGranos
+from Bola import Bola
+from listaBolas import ListaBolas
 from colisionDetector import Colision
 
-listaGranos = ListaGranos()
+listaBolas = ListaBolas()
 colision = Colision()
 
 
@@ -35,13 +35,13 @@ while not done:
         if evento.type == pygame.QUIT:
             done = True
         if evento.type == pygame.MOUSEBUTTONDOWN:
-            grano = Grano(pantalla)
-            listaGranos.add(grano)
+            bola = Bola(pantalla)
+            listaBolas.add(bola)
 
     # --- LA LÓGICA DEL JUEGO DEBERÍA IR AQUÍ
-    colision.comprobar(listaGranos.getLista())
-    colision.suelo(listaGranos.getLista(), dimensiones[1]-50)
-    colision.pared(listaGranos.getLista(), 0, dimensiones[0])
+    colision.comprobar(listaBolas.getLista())
+    colision.suelo(listaBolas.getLista(), dimensiones[1] - 50)
+    colision.pared(listaBolas.getLista(), 0, dimensiones[0])
 
     # --- EL CÓDIGO DE DIBUJO DEBERÍA IR AQUÍ
 
@@ -51,8 +51,8 @@ while not done:
 
 
     # print(reloj.get_time())
-    listaGranos.actualiza(reloj.get_time())
-    listaGranos.dibuja(BLANCOPALIDO)
+    listaBolas.actualiza(reloj.get_time())
+    listaBolas.dibuja(BLANCOPALIDO)
 
     # --- Avanzamos y actualizamos la pantalla con lo que hemos dibujado.
     pygame.display.flip()
